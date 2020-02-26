@@ -39,7 +39,7 @@ class MyHomePage extends StatelessWidget {
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
-        crossAxisAlignment: CrossAxisAlignment.end,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget> [
           Container(
             width: double.infinity,
@@ -49,11 +49,11 @@ class MyHomePage extends StatelessWidget {
               elevation: 5,
             ),
           ),
-        Card(
-          color: Colors.red,
-          child: Text('List of Tx'),
-
-          ),
+        Column(children: transactions.map((tx) {
+          return Card(
+            child: Text(tx.title),
+          );
+        }).toList(),),
         ],
       ),
     );
